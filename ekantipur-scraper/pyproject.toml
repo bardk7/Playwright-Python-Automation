@@ -1,7 +1,7 @@
 [project]
 name = "ekantipur-scraper"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Python web scraper that uses Playwright to fetch entertainment news and the daily cartoon from ekantipur.com and saves the data in JSON format."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
