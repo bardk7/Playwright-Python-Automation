@@ -1,0 +1,39 @@
+{
+  "entertainment_news": [
+    {
+      "title": "शान्तिराम राईको एकल सांगीतिक कार्यक्रम सम्पन्न",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/f9392357-ed41-4e96-ac09-c0a71618625f-2712026100249-1000x0.jpg&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "‘आ बाट आमा’को सेन्सर पास",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/aaammmamaa-2712026094445-1000x0.png&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "जिके पोखरेलको गीत ‘इन्दिरा’ सार्वजनिक",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/entertainment/82cc2641-ea7a-444a-8d4e-7a6041d8f2ae-1-2712026052728-1000x0.jpg&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "'बहुरिया'मा अधिकार खोज्ने सिता",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/-2612026011434-1000x0.jpg&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "रीना मोक्तान"
+    },
+    {
+      "title": "चलचित्रको विकास, विस्तार र प्रवर्द्धन हुने गरी कानून परिमार्जन हुँदैछ : मन्त्री सिन्हा",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/miscellaneous/1762860073-cci6i-11112025020543-1000x0-2612026100416-1000x0.jpg&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    }
+  ],
+  "cartoon_of_the_day": {
+    "title": "गजब छ बा!",
+    "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2022/third-party/gajab-chha-ba-821013-2712026052041-1000x0.jpg&w=301&h=0",
+    "author": "अविन"
+  }
+}
