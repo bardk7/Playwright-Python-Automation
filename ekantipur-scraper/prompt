@@ -89,59 +89,36 @@ playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
 
 **PROMPT**
 Problem statement (do not reinterpret):
-
 IT IS SHOWING THE EXTRACTION OF THE ENTERTAINMENT ARTICLES BUT IT DOESN'T SHOW THE CARTOON EXTRACTION PROCESS. FIX THIS ISSUE.
 
 Task:
-
 Modify the provided Playwright code so the cartoon extraction process is visibly executed in the browser
-
 Ensure all navigation steps used for cartoon extraction are performed in the visible browser window
-
 Rules (mandatory):
-
 * Do not change scraping logic
-
 * Do not add explanations
-
 * Do not add comments
-
 * Do not refactor
-
 * Do not optimize
-
 * Do not change selectors
-
 * Do not change function names
-
 * Do not change variable names
-
 * Do not change imports
-
 * Do not change output structure
-
 * Do not add logging, prints, or debug statements
-
 * Do not add artificial delays unless strictly required for visibility
-
 * Do not change any code unrelated to making the cartoon extraction visible
 
 Allowed changes (only):
-
 * Add the minimum required visible navigation steps needed for cartoon extraction to be shown in the browser
 
 Output requirements:
-
 * Output only the modified code
-
 * No prose
-
 * No markdown
-
 * No extra text
 
 If a change does not directly contribute to making the cartoon extraction visibly execute, it must not be made.
-
 Execute exactly and stop.
 
 
