@@ -1,6 +1,18 @@
 {
   "entertainment_news": [
     {
+      "title": "बर्लिनालेको अन्तर्राष्ट्रिय जुरीमा मीन भाम",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2025/miscellaneous/min-bham-21112025101039-1000x0.jpg&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "‘बुकी’को गीतमा देबेन्द्र र रोशनी",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/screenshot-2026-01-27-152452-2812026123100-1000x0.png&w=301&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
       "title": "शान्तिराम राईको एकल सांगीतिक कार्यक्रम सम्पन्न",
       "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/f9392357-ed41-4e96-ac09-c0a71618625f-2712026100249-1000x0.jpg&w=301&h=0",
       "category": "मनोरञ्जन",
@@ -15,18 +27,6 @@
     {
       "title": "जिके पोखरेलको गीत ‘इन्दिरा’ सार्वजनिक",
       "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/entertainment/82cc2641-ea7a-444a-8d4e-7a6041d8f2ae-1-2712026052728-1000x0.jpg&w=301&h=0",
-      "category": "मनोरञ्जन",
-      "author": "कान्तिपुर संवाददाता"
-    },
-    {
-      "title": "'बहुरिया'मा अधिकार खोज्ने सिता",
-      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/-2612026011434-1000x0.jpg&w=301&h=0",
-      "category": "मनोरञ्जन",
-      "author": "रीना मोक्तान"
-    },
-    {
-      "title": "चलचित्रको विकास, विस्तार र प्रवर्द्धन हुने गरी कानून परिमार्जन हुँदैछ : मन्त्री सिन्हा",
-      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/miscellaneous/1762860073-cci6i-11112025020543-1000x0-2612026100416-1000x0.jpg&w=301&h=0",
       "category": "मनोरञ्जन",
       "author": "कान्तिपुर संवाददाता"
     }
