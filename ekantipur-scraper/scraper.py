@@ -156,7 +156,7 @@ def extract_cartoon_of_the_day(page):
                 cartoon_data["title"] = page_content.strip()
         
         # If we still don't have complete data, try navigating to cartoon page
-        page.goto("https://ekantipur.com/cartoon", timeout=60000)
+        page.locator("a:has-text('कार्टुन')").first.click()
         page.wait_for_load_state("domcontentloaded")
         page.wait_for_timeout(2000)
         
