@@ -2,6 +2,38 @@ import json
 from playwright.sync_api import sync_playwright
 
 
+def dismiss_roadblock_ad(page):
+    """Dismiss the roadblock ad if present."""
+    try:
+        # Try to close the ad via close button
+        close_btn = page.locator("#roadblock-ad .close, #roadblock-ad [class*='close'], #roadblock-ad button").first
+        if close_btn.is_visible(timeout=2000):
+            close_btn.click(timeout=2000)
+            page.wait_for_timeout(500)
+            return
+    except:
+        pass
+    
+    # If no close button, hide the ad element via JavaScript
+    try:
+        page.evaluate("""
+            const ad = document.getElementById('roadblock-ad');
+            if (ad) {
+                ad.style.display = 'none';
+                ad.style.visibility = 'hidden';
+                ad.remove();
+            }
+            // Also remove any overlay/backdrop
+            document.querySelectorAll('[class*="overlay"], [class*="backdrop"], [class*="modal"]').forEach(el => {
+                if (el.id === 'roadblock-ad' || el.closest('#roadblock-ad')) {
+                    el.remove();
+                }
+            });
+        """)
+    except:
+        pass
+
+
 def extract_entertainment_news(page):
     
     entertainment_news = []
@@ -9,8 +41,11 @@ def extract_entertainment_news(page):
     page.goto("https://ekantipur.com/", timeout=60000)
     page.wait_for_load_state("domcontentloaded")
     
-    # Navigate to the entertainment section
-    page.locator("a:has-text('मनोरञ्जन')").first.click()
+    # Dismiss any roadblock ad that might be blocking interactions
+    dismiss_roadblock_ad(page)
+    
+    # Navigate to the entertainment section using force click to bypass any remaining overlays
+    page.locator("a:has-text('मनोरञ्जन')").first.click(force=True)
     
     # Wait for the news articles to load
     page.wait_for_load_state("domcontentloaded")
@@ -155,8 +190,11 @@ def extract_cartoon_of_the_day(page):
             else:
                 cartoon_data["title"] = page_content.strip()
         
+        # Dismiss any roadblock ad before navigating
+        dismiss_roadblock_ad(page)
+        
         # If we still don't have complete data, try navigating to cartoon page
-        page.locator("a:has-text('कार्टुन')").first.click()
+        page.locator("a:has-text('कार्टुन')").first.click(force=True)
         page.wait_for_load_state("domcontentloaded")
         page.wait_for_timeout(2000)
         
