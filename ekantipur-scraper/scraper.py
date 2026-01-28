@@ -10,7 +10,7 @@ def extract_entertainment_news(page):
     page.wait_for_load_state("domcontentloaded")
     
     # Navigate to the entertainment section
-    page.goto("https://ekantipur.com/entertainment", timeout=60000)
+    page.locator("a:has-text('मनोरञ्जन')").first.click()
     
     # Wait for the news articles to load
     page.wait_for_load_state("domcontentloaded")
