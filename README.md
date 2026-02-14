@@ -1,4 +1,4 @@
-# Data-QA-Intern-Practical-Test
+# Playwright Python Automation
 ## Ekantipur News Scraper
 
 ### Purpose
