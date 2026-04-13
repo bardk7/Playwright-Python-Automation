@@ -1,6 +1,12 @@
 {
   "entertainment_news": [
     {
+      "title": "रञ्जितको संगीतमा सित्तै गाइदिन्थिन् आशा",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/aasha-ranjit-1342026094645-1000x0.png&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "पर्वत पोर्तेल"
+    },
+    {
       "title": "अन्तर्राष्ट्रिय यात्रामा ‘गुलियो स्याउ’",
       "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/apple-1142026090412-1000x0.jpg&w=701&h=0",
       "category": "मनोरञ्जन",
@@ -23,12 +29,6 @@
       "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/entertainment/abhisekhanup-1042026085728-1000x0.jpg&w=701&h=0",
       "category": "मनोरञ्जन",
       "author": "रीना मोक्तान"
-    },
-    {
-      "title": "भुजुङको परिवेशमा ‘मायाले मोहनी लायो’",
-      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/nita-thapa-magar-and-bijay-punlamjung-1-1042026080033-1000x0.jpg&w=701&h=0",
-      "category": "मनोरञ्जन",
-      "author": "आश गुरुङ"
     }
   ],
   "cartoon_of_the_day": {
