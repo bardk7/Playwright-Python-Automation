@@ -1,90 +1,141 @@
 # Playwright Python Automation
+
 ## Ekantipur News Scraper
 
 ### Purpose
 
-This project automatically collects news and cartoon information from ekantipur.com, a popular Nepali news website. The program opens a web browser, visits the website, and gathers specific pieces of information without any manual work needed.
+This project scrapes selected content from [ekantipur.com](https://ekantipur.com) using Playwright (Python sync API).
 
-The collected information includes:
+The script collects:
 
-- The top 5 entertainment news articles
-- The daily cartoon (known as "Cartoon of the Day")
+- Up to 5 entertainment news items from the entertainment section
+- One cartoon entry from the cartoon section
+
+Results are saved as JSON in `output.json`.
 
 ### What the Program Collects
 
 #### Entertainment News
 
-For each of the top 5 entertainment news articles, the program collects:
+For each collected article card, the script writes:
 
-- **Title**: The headline of the news article
-- **Image URL**: The web address of the article's picture
-- **Category**: The section label (such as "मनोरञ्जन" which means Entertainment in Nepali)
-- **Author**: The name of the person who wrote the article (if available)
+- **title**: article headline text
+- **image_url**: resolved absolute image URL when available
+- **category**: category label text (defaults to `मनोरञ्जन` when missing)
+- **author**: byline text, or `null` when not found
 
 #### Cartoon of the Day
 
-For the daily cartoon, the program collects:
+For the first detected cartoon card, the script writes:
 
-- **Title**: The name or caption of the cartoon
-- **Image URL**: The web address of the cartoon image
-- **Author**: The name of the cartoonist
+- **title**: cartoon caption/title when available
+- **image_url**: resolved absolute image URL when available
+- **author**: author/cartoonist when available, otherwise `null`
 
-### How It Works (Step by Step)
+### How It Works (Based on `scraper.py`)
 
-#### Step 1: Opening the Browser
+1. Launches Chromium with `headless=False`, custom user agent, and a fixed viewport.
+2. Opens the homepage and attempts to dismiss overlay ads.
+3. Discovers the entertainment section link from page anchors using keyword and URL scoring.
+4. Navigates to the discovered entertainment URL, waits for cards, scrolls for lazy-loaded images, and extracts up to 5 valid cards.
+5. Repeats homepage navigation and link discovery for the cartoon section.
+6. Extracts data from the first matching cartoon card on the listing page.
+7. Writes `output.json` with UTF-8 encoding and `ensure_ascii=False` (preserves Nepali text).
 
-The program starts by opening a web browser (Chromium). You will see this browser window appear on your screen, allowing you to watch the entire process happen.
+### Output Format
 
-#### Step 2: Collecting Entertainment News
+`output.json` has this structure:
 
-1. The browser first goes to the main ekantipur.com website
-2. It then navigates to the Entertainment section of the website
-3. The program waits for the page to fully load
-4. It looks through the news articles on the page
-5. For each of the first 5 articles it finds, it reads and saves the title, picture address, category, and author name
-
-#### Step 3: Collecting the Cartoon of the Day
-
-1. The browser returns to the main ekantipur.com homepage
-2. The program scrolls down the page to make sure all content is visible
-3. It searches for the cartoon section by looking for specific words and image patterns
-4. It reads the cartoon's title, picture address, and the cartoonist's name
-5. If the cartoon information is not complete, the program visits the dedicated cartoon page to find any missing details
-
-#### Step 4: Saving the Results
-
-1. The browser closes
-2. All collected information is organized into a structured format
-3. The data is saved to a file called "output.json"
-4. The file is saved with proper encoding to correctly display Nepali text
-
-### How to Run the Program
-
-#### Requirements
-
-- Python version 3.12 or newer
-- The uv package manager
-- Playwright browser automation tool
-
-#### Running the Script
-
-Open a terminal or command prompt in the project folder and type:
-
+```json
+{
+  "entertainment_news": [
+    {
+      "title": "string",
+      "image_url": "string or null",
+      "category": "string",
+      "author": "string or null"
+    }
+  ],
+  "cartoon_of_the_day": {
+    "title": "string or null",
+    "image_url": "string or null",
+    "author": "string or null"
+  }
+}
 ```
+
+### Tech Stack
+
+- Python `>=3.12`
+- Playwright for Python (sync API)
+
+### Dependencies
+
+From `pyproject.toml`:
+
+- `playwright>=1.57.0`
+
+Locked versions in `uv.lock`:
+
+- `playwright==1.57.0`
+- `greenlet==3.3.1`
+- `pyee==13.0.0`
+- `typing-extensions==4.15.0`
+
+### Installation
+
+#### Prerequisites
+
+- Python `3.12` or newer
+- `uv` package manager
+
+From the repository root:
+
+```bash
+cd ekantipur-scraper
+uv sync
+```
+
+### Usage
+
+From the `ekantipur-scraper` directory:
+
+```bash
 uv run python scraper.py
 ```
 
-The browser will open and you will see the program navigating through the website. Messages will appear in the terminal showing the progress.
+The script has no CLI arguments defined in the codebase.
+
+### Configuration
+
+No command-line flags, environment variables, or external configuration files are clearly defined in the current codebase.
 
 ### Where Results Are Saved
 
-All collected data is saved in a file named **output.json** located in the same folder as the program. This file contains all the entertainment news articles and cartoon information in a structured format that can be easily read by other programs or opened in a text editor.
+The script writes to `output.json` in the current working directory. If you run the command from `ekantipur-scraper`, the file path is `ekantipur-scraper/output.json`.
 
-The file uses a format called JSON, which organizes the data with clear labels for each piece of information. Nepali text is preserved correctly in this file.
+### Project Structure
 
-### Project Files
+- `README.md`: repository documentation
+- `ekantipur-scraper/`: scraper project directory
+- `ekantipur-scraper/scraper.py`: main scraping script
+- `ekantipur-scraper/output.json`: sample output file
+- `ekantipur-scraper/pyproject.toml`: project metadata and direct dependency
+- `ekantipur-scraper/uv.lock`: locked dependency versions
 
-- **scraper.py**: The main program that does all the work
-- **output.json**: The file where results are saved after running the program
-- **pyproject.toml**: A configuration file that lists what software the program needs to run
-- **prompts.txt**: A record of instructions used during the project development
+### Notes and Limitations
+
+- Section navigation depends on runtime link discovery (keyword and URL scoring on page anchors).
+- Cartoon extraction currently uses the first matching cartoon card on the listing page.
+- Selectors for a cartoon detail page exist in code but are not used in the current extraction flow.
+- The browser currently runs in headed mode (`headless=False`).
+- A dedicated browser-installation step is not clearly defined in the codebase.
+- Retry strategy, scheduling, and rate-limiting behavior are not clearly defined in the codebase.
+
+### Contribution
+
+A contribution workflow (branching strategy, linting/testing requirements, and pull request rules) is not clearly defined in the codebase.
+
+### License
+
+A license is not clearly defined in the codebase (no license file was found in the repository root).
